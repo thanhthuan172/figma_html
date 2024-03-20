@@ -11,6 +11,7 @@ body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
 }
+/* ================ common ==================== */
 a {
   text-decoration: none;
 }
@@ -20,6 +21,15 @@ a {
   margin-right: auto;
   max-width: calc(100% - 48px);
 }
+.heading-2 {
+  color: #171100;
+  font-family: Sen;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.26; /* 126.316% */
+  letter-spacing: -0.76px;
+}
+/* ======================= header ================================ */
 .header {
   background: #fffcf4;
 }
@@ -238,4 +248,48 @@ h1.heading {
 }
 .hero .content_1 p:nth-child(2) {
   margin-left: 24px;
+}
+/* ====================== popular ==================== */
+.popular-courses {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popular p {
+  width: 458px;
+  color: #5f5b53;
+  margin-top: 16px;
+  font-size: 1.8rem;
+  line-height: 1.67; /* 166.667% */
+}
+.popular .icon-courses {
+  /* margin-left: auto; */
+  display: flex;
+  gap: 18px;
+}
+.popular .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: none;
+}
+/* .popular .back-icon {
+  background: none;
+}
+.popular .foward-icon {
+  background: var(--primary-color);
+  margin-left: 18px;
+  color: white;
+} */
+.popular .icon:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  background: var(--primary-color);
+  color: white;
 }
