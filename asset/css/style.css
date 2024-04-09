@@ -31,7 +31,6 @@ a {
 }
 .heading-3 {
   color: #171100;
-  font-family: Poppins;
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.67; /* 166.667% */
@@ -392,30 +391,27 @@ h1.heading {
 /* ============================ blog ================================ */
 .blog-main {
   margin-top: 200px;
-  height: 380px;
   border: 1px solid #000;
   background: #2e2100;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 96px 0;
 }
-.blog {
+.blog-list {
   display: flex;
-  justify-content: space-between;
-  margin-top: 96px;
+  overflow: hidden;
 }
-
-.blog .profile {
-  max-width: 34%;
+.blog-item {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-shrink: 0;
 }
-.blog .profile .avata {
-  display: block;
+.blog-item .profile .avata {
   width: 72px;
   height: 72px;
-  border-radius: 72px;
+  border-radius: 50%;
   object-fit: cover;
 }
-.blog .profile .name {
+.blog-item .profile .name {
   margin-top: 18px;
   color: #f7f7f7;
   font-family: Sen;
@@ -423,27 +419,33 @@ h1.heading {
   font-weight: 700;
   line-height: 1.42; /* 141.667% */
 }
-.blog .profile .desc {
+.blog-item .profile .desc {
+  margin-top: 4px;
   color: #bfbcb2;
   font-size: 1.4rem;
   line-height: 1.86; /* 185.714% */
-  margin-top: 4px;
 }
-.blog .profile .more {
-  margin-top: 28px;
+.blog-item .profile .circle {
+  fill: #634700;
+  cursor: pointer;
 }
-.blog .info {
-  width: 770px;
+.blog-item .profile .circle.active {
+  fill: var(--primary-color);
+  cursor: default;
+}
+.blog-item .info {
+  width: 66%;
+  margin-left: auto;
   position: relative;
 }
-.blog .info .desc {
+.blog-item .info .desc {
   position: absolute;
-  left: 28px;
-  top: 30px;
+  top: 20px;
+  left: 30px;
   color: #fff;
   font-size: 2.6rem;
   font-style: italic;
-  line-height: 1.54;
+  line-height: 1.54; /* 153.846% */
   text-align: justify;
 }
 /* ======================= edu ==================================== */
@@ -525,6 +527,15 @@ h1.heading {
   display: flex;
   justify-content: space-between;
   margin-top: 55px;
+  overflow: hidden;
+  gap: 30px;
+}
+.our-blog .bottom .item {
+  flex-shrink: 0;
+  width: calc(33.33% - 20px);
+  height: 467px;
+  border-radius: 16px;
+  background: #fff;
 }
 .our-blog .bottom .item:hover {
   border-radius: 16px;
@@ -534,16 +545,24 @@ h1.heading {
 .our-blog .bottom .content {
   margin: 20px 20px;
 }
-.our-blog .bottom .item {
-  width: 370px;
-  height: 467px;
-  border-radius: 16px;
-  background: #fff;
-}
+
 .our-blog .bottom .img {
   width: 370px;
   height: 250px;
   border-radius: 16px 16px 0px 0px;
+}
+.our-blog .bottom .date {
+  display: flex;
+  align-items: center;
+}
+.our-blog .bottom .date::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  margin-right: 4px;
 }
 .our-blog .bottom .line {
   width: 160px;
@@ -558,6 +577,23 @@ h1.heading {
 .our-blog .content .btn-read-more {
   margin-top: 12px;
   border: none;
+}
+.our-blog .dots {
+  margin-top: 38px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.our-blog .dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5f5b53;
+  cursor: pointer;
+}
+.our-blog .dots .dot.active {
+  cursor: default;
+  background: var(--primary-color);
 }
 /* ======================================== bottom - main ======================================= */
 footer {
@@ -626,10 +662,16 @@ footer .main-content {
   margin-top: 43px;
   gap: 12px;
 }
+
 .footer .info ul a {
-  text-decoration: none;
   color: #bfbcb2;
   font-size: 1.4rem;
+  line-height: 1.86;
+}
+.footer .address strong {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 1.86; /* 185.714% */
 }
 .footer .info::after {
@@ -640,16 +682,11 @@ footer .main-content {
   height: 1px;
   background: #59554b;
 }
+
 .footer .copyright {
   text-align: center;
   padding: 67px 0 0;
   color: #807d74;
   font-size: 1.4rem;
   line-height: 1.86;
-}
-.footer .address strong {
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.86; /* 185.714% */
 }
